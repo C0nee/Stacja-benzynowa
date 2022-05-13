@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacja benzynowa</title>
+    <style>
+body{
+    /*background-color: brown;*/
+    color: whitesmoke;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/f5/Stacja_paliw_MOYA.jpg) ;}
+.S{
+    padding: 200px;
+    text-align: center;
+}
+        
+    </style>
+</head>
+
+<body>
+    <div class="S" >
+        <div>
+            <h1 >Stacja benzynowa</h1>
+        </div>
+        <div>
+            <h3 >Wybierz rodzaj paliwa</h3>
+        </div>
+        <div >
+            <input type="radio" id="benzyna" name="tank" value="paliwo">
+            <label for="benzyna">Benzyna</label>
+        </div>
+        <div >
+            <input type="radio" id="Ropa" name="tank" value="paliwo">
+            <label for="Ropa"> Ropa </label>
+        </div>
+        <div >
+            <p>Wpisz ile litrów zostalo zatankowane:</p>
+            <input type="text" id="litry">
+        </div>
+        <div >
+            <button onclick="oblicz()">oblicz</button>
+            <p>Cena wynosi:</p>
+            <p id="wynik"></p>
+        </div>
+    </div>
+    <script>
+
+
+
+        function oblicz() {
+
+            var Paliwo = document.getElementById("litry").value;
+
+            let R = document.getElementById("Ropa").checked;
+            let B = document.getElementById("benzyna").checked;
+            if (R == true) {
+                let cena = Paliwo * 7.5;
+                document.getElementById("wynik").innerHTML = cena;
+            }
+            else if (B == true) {
+                let cena = Paliwo * 6.7;
+                document.getElementById("wynik").innerHTML = cena;
+            }
+        }
+    </script>
+</body>
+
+</html>
